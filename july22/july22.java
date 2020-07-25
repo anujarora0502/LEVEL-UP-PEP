@@ -97,6 +97,7 @@ public class july22{
 
 //LEETCODE 64 done 
 
+static int mod = (int)1e9 +7;
 
 
 public static long friendsPairingProblem(int n, long[] dp) {
@@ -136,8 +137,8 @@ public static int friendsPairingProblem_Opti(int n) {
     for (int i = 2; i <= n; i++) {
         ans = single + pairUp * (i - 1);
 
-        single = pairUp;
-        pairUp = ans;
+        pairUp = single;
+        single = ans;
     }
 
     return ans;
