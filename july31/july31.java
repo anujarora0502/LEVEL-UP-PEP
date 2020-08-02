@@ -101,6 +101,8 @@ public class july31{
         }
     }
 
+    
+
     public static void main(String[] args){
 
        int[] arr = {0,1,2,3,4,6,-1,-2};
