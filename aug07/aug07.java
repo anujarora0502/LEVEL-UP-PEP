@@ -135,16 +135,11 @@ public static int summation(int si, int ei, int[] freq){
 
 public static int OptimalBST(int[] freq, int si, int ei,int[][] dp){ // prefix sum for n^3
     
-    if(si == ei){
-        System.out.println(si);
-        return dp[si][ei] = freq[si];
-    }
-    
     if(dp[si][ei] != 0) return dp[si][ei]; 
 
         int myAns=(int)1e9;
         for(int cut=si;cut<=ei;cut++){
-            int leftRes = cut == si ? 0 : OptimalBST(freq,si,cut,dp);
+            int leftRes = cut == si ? 0 : OptimalBST(freq,si,cut-1,dp);
             int rightRes = cut == ei ? 0 : OptimalBST(freq,cut+1,ei,dp);
             
             int recRes = leftRes + summation(si, ei, freq) + rightRes;
